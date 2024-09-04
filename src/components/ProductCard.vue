@@ -38,14 +38,12 @@ export default {
 
 <style lang="scss" scoped>
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px 30px;
 
   .card {
-    width: 170px;
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
@@ -74,9 +72,8 @@ export default {
 
 @media screen and (min-width: 768px) {
   .card-container {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
     .card {
-      width: 210px;
-
       .product-title {
         font-size: 22px;
         padding: 0 5px;
@@ -89,12 +86,8 @@ export default {
 }
 @media screen and (min-width: 1025px) {
   .card-container {
-    gap: 50px;
-    padding: 50px 200px;
     .card {
       max-width: 300px;
-      flex: 1 1 calc(33.333% - 50px);
-
       .product-title {
         font-size: 22px;
         padding: 0 5px;

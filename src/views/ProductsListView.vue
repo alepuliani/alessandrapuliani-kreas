@@ -44,6 +44,10 @@ export default {
 
 <style lang="scss" scoped>
 .results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 100px;
   flex: 1;
 
