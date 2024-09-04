@@ -171,7 +171,7 @@ export default {
   .product-info {
     position: absolute;
     bottom: -20px;
-
+    height: 40%;
     background-color: rgb(255, 255, 255);
     padding: 30px;
     margin: auto;
