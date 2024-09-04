@@ -33,7 +33,7 @@ button {
   border: none;
   border-radius: 15px;
   font-family: "Mulish", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
 
   &:hover {
     background-color: #849e76;
