@@ -1,0 +1,49 @@
+<script>
+export default {
+  props: {
+    label: {
+      type: String,
+      required: true
+    }
+  },
+  emits: "click",
+
+  setup(props, { emit }) {
+    const handleClick = () => {
+      emit("click")
+    }
+
+    return {
+      handleClick,
+      label: props.label
+    }
+  }
+}
+</script>
+
+<template>
+  <button @click="handleClick">{{ label }}</button>
+</template>
+
+<style lang="scss" scoped>
+button {
+  padding: 5px 10px;
+  background-color: #89b088;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-family: "Mulish", sans-serif;
+
+  &:hover {
+    background-color: #849e76;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 768px) {
+  button {
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 20px;
+  }
+}
+</style>
