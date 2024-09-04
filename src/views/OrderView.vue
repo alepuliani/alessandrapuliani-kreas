@@ -1,7 +1,7 @@
 <script>
-import SmallButton from "@/components/SmallButton.vue"
+import BaseButton from "@/components/BaseButton.vue"
 export default {
-  components: { SmallButton }
+  components: { BaseButton }
 }
 </script>
 <template>
@@ -13,7 +13,7 @@ export default {
 
     <i class="bi bi-cart-check"></i>
     <router-link to="/">
-      <SmallButton :label="'Go Home'" />
+      <BaseButton>Go Home</BaseButton>
     </router-link>
   </div>
 </template>

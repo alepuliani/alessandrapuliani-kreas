@@ -1,10 +1,10 @@
 <script>
 import { useStore } from "vuex"
 import { computed } from "vue"
-import SmallButton from "@/components/SmallButton.vue"
+import BaseButton from "@/components/BaseButton.vue"
 
 export default {
-  components: { SmallButton },
+  components: { BaseButton },
   setup() {
     const store = useStore()
     const cart = computed(() => store.getters.getCartProducts)
@@ -43,13 +43,7 @@ export default {
 
     // The `totalQuantity` constant is created using Vue's `computed` function to calculates the total quantity of products in the shopping cart by iterating over each product in the `cart` array and
     // summing up their individual quantities.
-    const totalQuantity = computed(() => {
-      let sum = 0
-      cart.value.forEach((product) => {
-        sum += product.quantity
-      })
-      return sum
-    })
+    const totalQuantity = computed(() => store.getters.totalCartQuantity)
 
     // This function is essentially a handler for confirming an order and clearing the cart in the process.
     const confirmOrder = function () {
@@ -75,14 +69,14 @@ export default {
       <i class="bi bi-cart"></i>
       <p><strong>Your Cart is empty</strong></p>
       <router-link to="/">
-        <SmallButton :label="'Start Shopping'" />
+        <BaseButton>Start Shopping</BaseButton>
       </router-link>
     </div>
 
     <div v-else>
       <div class="cart-start">
         <h1>Cart</h1>
-        <SmallButton :label="'Clear Cart'" @click="clearCart" />
+        <BaseButton @click="clearCart">Clear Cart</BaseButton>
       </div>
       <div class="cart-container">
         <div class="prod-container">
@@ -163,11 +157,13 @@ export default {
               >
             </p>
 
-            <router-link to="/order"
-              ><button @click="confirmOrder" class="confirm-order-btn">
-                Confirm Order
-              </button></router-link
-            >
+            <router-link to="/order">
+              <BaseButton
+                @click="confirmOrder"
+                :customClass="'confirm-order-btn'"
+                >Confirm Order</BaseButton
+              >
+            </router-link>
           </div>
         </div>
       </div>
@@ -317,18 +313,8 @@ export default {
 
     .confirm-order-btn {
       padding: 10px 35px;
-      background-color: #89b088;
-      border: none;
       border-radius: 25px;
-      color: rgb(245, 244, 239);
-      font-weight: 600;
       font-size: 20px;
-      font-family: "Mulish", sans-serif;
-
-      &:hover {
-        cursor: pointer;
-        background-color: #849e76;
-      }
     }
   }
 }

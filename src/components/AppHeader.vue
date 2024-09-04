@@ -11,7 +11,8 @@ export default {
     // The code snippet you provided is using Vue 3 Composition API to create reactive properties
     // `isCartView` and `cartQuantity`.
     const isCartView = computed(() => route.path === "/cart")
-    const cartQuantity = computed(() => store.getters.getCartProducts.length)
+
+    const cartQuantity = computed(() => store.getters.totalCartQuantity)
 
     return {
       route,

@@ -1,9 +1,9 @@
 <script>
 export default {
   props: {
-    label: {
+    customClass: {
       type: String,
-      required: true
+      default: ""
     }
   },
   emits: "click",
@@ -15,14 +15,16 @@ export default {
 
     return {
       handleClick,
-      label: props.label
+      customClass: props.customClass
     }
   }
 }
 </script>
 
 <template>
-  <button @click="handleClick">{{ label }}</button>
+  <button :class="customClass" @click="handleClick">
+    <slot></slot>
+  </button>
 </template>
 
 <style lang="scss" scoped>
@@ -34,6 +36,7 @@ button {
   border-radius: 15px;
   font-family: "Mulish", sans-serif;
   font-size: 14px;
+  box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.3);
 
   &:hover {
     background-color: #849e76;

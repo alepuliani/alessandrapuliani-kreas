@@ -56,6 +56,7 @@ const store = createStore({
       localStorage.clear()
     }
   },
+
   // Actions are methods used to handle asynchronous operations or any other complex logic
   actions: {
     // The function fetches products data from a JSON file using axios in a Vue.js application and updates the state accordingly ('setLoading', 'setProducts').
@@ -83,6 +84,13 @@ const store = createStore({
     },
     getCartProducts(state) {
       return state.cartProducts
+    },
+    totalCartQuantity(state) {
+      let sum = 0
+      state.cartProducts.forEach((product) => {
+        sum += product.quantity
+      })
+      return sum
     }
   }
 })

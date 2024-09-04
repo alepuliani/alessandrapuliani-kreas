@@ -2,8 +2,10 @@
 import { ref, computed, onMounted } from "vue"
 import { useRoute } from "vue-router"
 import { useStore } from "vuex"
+import BaseButton from "../components/BaseButton.vue"
 
 export default {
+  components: { BaseButton },
   setup() {
     const store = useStore()
     const route = useRoute()
@@ -110,14 +112,18 @@ export default {
           </div>
         </div>
         <div class="btn-div">
-          <button @click="addNewProduct()" class="add-btn">
-            {{ addBtnText }}
-          </button>
-          <router-link to="/cart"
-            ><button v-if="showCheckout === true" class="checkout-btn">
-              <i class="bi bi-cart"></i> Checkout
-            </button></router-link
+          <BaseButton @click="addNewProduct()" :customClass="'add-btn'">
+            {{ addBtnText }}</BaseButton
           >
+
+          <router-link to="/cart">
+            <BaseButton
+              v-if="showCheckout === true"
+              :customClass="'checkout-btn'"
+            >
+              <i class="bi bi-cart"></i> Checkout
+            </BaseButton>
+          </router-link>
         </div>
       </div>
     </div>
@@ -131,9 +137,10 @@ export default {
   height: 100vh;
   overflow: hidden;
   display: flex;
+  flex: 1;
 
   .go-back-btn {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     background-color: transparent;
@@ -228,19 +235,9 @@ export default {
     .btn-div {
       .add-btn {
         padding: 10px 35px;
-        background-color: #89b088;
-        border: none;
         border-radius: 25px;
-        color: rgb(245, 244, 239);
-        font-weight: 600;
         font-size: 20px;
-        font-family: "Mulish", sans-serif;
         margin-bottom: 30px;
-
-        &:hover {
-          cursor: pointer;
-          background-color: #849e76;
-        }
       }
 
       .checkout-btn {
@@ -274,6 +271,7 @@ export default {
     height: 85vh;
 
     .go-back-btn {
+      position: absolute;
       top: 150px;
     }
 

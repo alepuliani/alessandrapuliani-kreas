@@ -1,8 +1,8 @@
 <script>
-import SmallButton from "./SmallButton.vue"
+import BaseButton from "./BaseButton.vue"
 
 export default {
-  components: { SmallButton },
+  components: { BaseButton },
 
   props: {
     products: {
@@ -15,24 +15,25 @@ export default {
 
 <template>
   <div class="card-container">
-    <div class="card" v-for="(product, index) in products" :key="index">
-      <img :src="product.image" alt="" class="product-img" />
-      <h1 class="product-title">{{ product.name }}</h1>
-      <div class="product-details">
-        <p class="product-price">{{ product.price.toFixed(2) }} €</p>
-
-        <router-link
-          :to="{
-            name: 'product',
-            params: {
-              name: product.name
-            }
-          }"
-        >
-          <SmallButton :label="'View'" />
-        </router-link>
-      </div>
-    </div>
+    <router-link
+      :to="{
+        name: 'product',
+        params: {
+          name: product.name
+        }
+      }"
+      v-for="(product, index) in products"
+      :key="index"
+    >
+      <button class="card">
+        <img :src="product.image" alt="" class="product-img" />
+        <h1 class="product-title">{{ product.name }}</h1>
+        <div class="product-details">
+          <p class="product-price">{{ product.price.toFixed(2) }} €</p>
+          <BaseButton :customClass="'bla'">View</BaseButton>
+        </div>
+      </button></router-link
+    >
   </div>
 </template>
 
@@ -48,6 +49,13 @@ export default {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+    color: black;
+    border: none;
+    font-family: "Mulish", sans-serif;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     .product-img {
       max-width: 100%;
@@ -57,7 +65,6 @@ export default {
       margin-top: 10px;
       font-size: 20px;
       text-align: center;
-      font-weight: 800;
     }
     .product-details {
       display: flex;
