@@ -39,7 +39,7 @@ export default {
 <style lang="scss" scoped>
 .card-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
   gap: 20px;
   padding: 20px 30px;
 

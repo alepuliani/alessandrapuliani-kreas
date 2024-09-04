@@ -220,7 +220,6 @@ export default {
     background-color: white;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 
     border-radius: 10px;
     overflow: hidden;
@@ -234,11 +233,12 @@ export default {
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
       padding: 0 16px;
 
       h2 {
         font-size: 20px;
+        margin-bottom: 10px;
       }
 
       .price-quantity {

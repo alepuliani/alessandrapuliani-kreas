@@ -33,6 +33,7 @@ button {
   border: none;
   border-radius: 15px;
   font-family: "Mulish", sans-serif;
+  font-size: 16px;
 
   &:hover {
     background-color: #849e76;
@@ -43,7 +44,7 @@ button {
   button {
     text-align: center;
     padding: 8px 15px;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 20px;
   }
 }

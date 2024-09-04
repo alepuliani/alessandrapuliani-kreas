@@ -174,12 +174,12 @@ export default {
     z-index: 100;
 
     .product-title {
-      font-size: 40px;
+      font-size: 30px;
       font-weight: 900;
     }
 
     .product-description {
-      font-size: 20px;
+      font-size: 18px;
       padding: 15px 0;
     }
 
@@ -190,7 +190,7 @@ export default {
       padding: 20px 0;
 
       .product-price {
-        font-size: 30px;
+        font-size: 20px;
         font-weight: bold;
       }
 
