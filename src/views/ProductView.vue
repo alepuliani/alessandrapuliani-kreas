@@ -207,6 +207,8 @@ export default {
           border: none;
           border-radius: 15px;
           margin: 0 10px;
+          color: black;
+          font-size: 20px;
 
           &:hover {
             cursor: pointer;

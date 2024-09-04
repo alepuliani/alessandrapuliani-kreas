@@ -252,11 +252,13 @@ export default {
           padding-right: 10px;
 
           button {
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
             border: none;
-            border-radius: 50%;
+            border-radius: 15px;
             margin: 0 5px;
+            color: black;
+            font-size: 20px;
 
             &:hover {
               cursor: pointer;
@@ -278,6 +280,7 @@ export default {
       background: none;
       border: none;
       height: 20px;
+      color: #000000;
 
       &:hover {
         cursor: pointer;

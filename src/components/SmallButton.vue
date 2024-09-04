@@ -41,6 +41,7 @@ button {
 }
 @media screen and (min-width: 768px) {
   button {
+    text-align: center;
     padding: 8px 15px;
     font-size: 16px;
     border-radius: 20px;
