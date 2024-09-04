@@ -252,13 +252,16 @@ export default {
           padding-right: 10px;
 
           button {
-            width: 30px;
-            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 25px;
+            height: 25px;
             border: none;
             border-radius: 15px;
             margin: 0 5px;
             color: black;
-            font-size: 20px;
+            font-size: 18px;
 
             &:hover {
               cursor: pointer;
