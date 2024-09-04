@@ -6,7 +6,7 @@ export default {
       default: ""
     }
   },
-  emits: "click",
+  emits: ["click"], // Emissione dell'evento come array
 
   setup(props, { emit }) {
     const handleClick = () => {

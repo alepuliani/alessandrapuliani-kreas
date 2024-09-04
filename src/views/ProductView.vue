@@ -69,7 +69,7 @@ export default {
       store.commit("addToCart", productToAdd)
       setTimeout(() => {
         addBtnText.value = "Add to Cart"
-      }, 2000)
+      }, 1000)
 
       showCheckout.value = true
     }
@@ -112,17 +112,16 @@ export default {
           </div>
         </div>
         <div class="btn-div">
-          <BaseButton @click="addNewProduct()" :customClass="'add-btn'">
-            {{ addBtnText }}</BaseButton
-          >
+          <BaseButton @click="addNewProduct" :customClass="'add-btn'">{{
+            addBtnText
+          }}</BaseButton>
 
           <router-link to="/cart">
             <BaseButton
               v-if="showCheckout === true"
               :customClass="'checkout-btn'"
+              ><i class="bi bi-cart"></i> Checkout</BaseButton
             >
-              <i class="bi bi-cart"></i> Checkout
-            </BaseButton>
           </router-link>
         </div>
       </div>
@@ -137,7 +136,6 @@ export default {
   height: 100vh;
   overflow: hidden;
   display: flex;
-  flex: 1;
 
   .go-back-btn {
     position: fixed;
@@ -171,7 +169,7 @@ export default {
   .product-info {
     position: absolute;
     bottom: -20px;
-    height: 40%;
+
     background-color: rgb(255, 255, 255);
     padding: 30px;
     margin: auto;
@@ -242,17 +240,13 @@ export default {
 
       .checkout-btn {
         background-color: #ddc78d;
-        border: none;
         padding: 8px 15px;
         border-radius: 25px;
-        color: white;
         font-size: 13px;
         margin: 20px 0;
-        font-family: "Mulish", sans-serif;
         margin-left: 10px;
 
         &:hover {
-          cursor: pointer;
           background-color: #cdb883;
         }
 
