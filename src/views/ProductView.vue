@@ -261,56 +261,72 @@ export default {
 @media screen and (min-width: 768px) {
   .product-container {
     position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 100px;
-    height: 85vh;
+    flex: 1;
 
-    .go-back-btn {
-      position: absolute;
-      top: 150px;
-    }
+    .prod-div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px auto;
+      border-radius: 50px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+      height: 800px;
+      width: 500px;
 
-    .product-img {
-      height: 80%;
-      position: static;
-      z-index: 0;
-    }
+      .go-back-btn {
+        position: absolute;
+        top: 10px;
+      }
 
-    .product-info {
-      position: absolute;
-      height: 340px;
+      .product-img {
+        position: static;
+        height: 450px;
+      }
+
+      .product-info {
+        height: 500px;
+        width: 500px;
+        margin: 0;
+        position: static;
+        border-radius: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .add-btn {
+          margin: 0;
+        }
+      }
     }
   }
 }
 @media screen and (min-width: 1024px) {
   .product-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-
     .prod-div {
-      display: flex;
       flex-direction: row;
-      align-items: center;
-      margin: auto;
-      margin-top: 20px;
+      margin: 30px 0;
       border-radius: 50px;
       overflow: hidden;
       position: relative;
-
-      .go-back-btn {
-        top: 10px;
-      }
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+      height: 400px;
+      width: auto;
 
       .product-img {
-        height: 500px;
-        width: 500px;
+        width: 400px;
       }
+
       .product-info {
-        position: static;
-        height: 500px;
-        width: 500px;
+        width: 400px;
         margin: 0;
-        border-radius: 0;
 
         display: flex;
         flex-direction: column;
