@@ -1,28 +1,17 @@
-<script>
+<script setup>
 import { computed, onMounted } from "vue"
 import { useStore } from "vuex"
 
 import ProductCard from "../components/ProductCard.vue"
 
-export default {
-  components: { ProductCard },
+const store = useStore()
+const products = computed(() => store.getters.getProducts)
+const loading = computed(() => store.getters.isLoading)
 
-  setup() {
-    const store = useStore()
-    const products = computed(() => store.getters.getProducts)
-    const loading = computed(() => store.getters.isLoading)
-
-    // Dispatching an action called `fetchProducts` to the Vuex store when the component is mounted.
-    onMounted(() => {
-      store.dispatch("fetchProducts")
-    })
-
-    return {
-      products,
-      loading
-    }
-  }
-}
+// Dispatching an action called `fetchProducts` to the Vuex store when the component is mounted.
+onMounted(() => {
+  store.dispatch("fetchProducts")
+})
 </script>
 
 <template>

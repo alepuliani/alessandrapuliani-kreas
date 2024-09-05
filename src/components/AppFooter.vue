@@ -1,5 +1,3 @@
-<script></script>
-
 <template>
   <div class="footer">
     <p>

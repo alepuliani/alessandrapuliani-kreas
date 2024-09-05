@@ -1,89 +1,73 @@
-<script>
+<script setup>
 import { ref, computed, onMounted } from "vue"
 import { useRoute } from "vue-router"
 import { useStore } from "vuex"
 import BaseButton from "../components/BaseButton.vue"
 
-export default {
-  components: { BaseButton },
-  setup() {
-    const store = useStore()
-    const route = useRoute()
+const store = useStore()
+const route = useRoute()
 
-    // These lines of code are using the `computed` function from Vue to create reactive computed
-    // properties.
-    const products = computed(() => store.getters.getProducts)
-    const name = computed(() => route.params.name)
+// These lines of code are using the `computed` function from Vue to create reactive computed
+// properties.
+const products = computed(() => store.getters.getProducts)
+const name = computed(() => route.params.name)
 
-    const productQuantity = ref(1)
-    const selectedProduct = ref(null)
-    const showCheckout = ref(false)
-    const addBtnText = ref("Add to Cart")
+const productQuantity = ref(1)
+const selectedProduct = ref(null)
+const showCheckout = ref(false)
+const addBtnText = ref("Add to Cart")
 
-    // Finding and setting the `selectedProduct` based on the `name` parameter from the route. It uses the `computed` properties `products` and
-    // `name` to find a product with a matching name in the list of products. Once a product with the
-    // matching name is found, it assigns that product to the `selectedProduct` ref variable.
-    const findSelectedProduct = function () {
-      selectedProduct.value = products.value.find(
-        (product) => product.name === name.value
-      )
-    }
+// Finding and setting the `selectedProduct` based on the `name` parameter from the route. It uses the `computed` properties `products` and
+// `name` to find a product with a matching name in the list of products. Once a product with the
+// matching name is found, it assigns that product to the `selectedProduct` ref variable.
+const findSelectedProduct = function () {
+  selectedProduct.value = products.value.find(
+    (product) => product.name === name.value
+  )
+}
 
-    // Asynchronous function for loading products from the store if the `products` array is empty.
-    const loadProducts = async function () {
-      if (products.value.length === 0) {
-        await store.dispatch("fetchProducts")
-      }
-      findSelectedProduct()
-    }
-
-    // The `onMounted(loadProducts)` line in the Vue setup function is using the `onMounted` lifecycle
-    // hook provided by Vue to call the `loadProducts` function when the component is mounted to the DOM.
-    onMounted(loadProducts)
-
-    // Functions responsible for changing the `productQuantity` value by 1 each time one is called. They directly modifie the value stored in the `productQuantity` ref variable.
-    const increaseQuantity = function () {
-      productQuantity.value++
-      addBtnText.value = "Add to Cart"
-    }
-
-    const decreaseQuantity = function () {
-      if (productQuantity.value > 1) {
-        productQuantity.value--
-        addBtnText.value = "Add to Cart"
-      }
-    }
-
-    // Function responsible for adding the selected product to the cart
-    const addNewProduct = function () {
-      const productToAdd = {
-        name: selectedProduct.value.name,
-        price: Number(selectedProduct.value.price),
-        image: selectedProduct.value.image,
-        quantity: Number(productQuantity.value),
-        total:
-          Number(selectedProduct.value.price) * Number(productQuantity.value)
-      }
-
-      addBtnText.value = "Added!"
-      store.commit("addToCart", productToAdd)
-      setTimeout(() => {
-        addBtnText.value = "Add to Cart"
-      }, 1000)
-      productQuantity.value = 1
-      showCheckout.value = true
-    }
-
-    return {
-      addBtnText,
-      selectedProduct,
-      productQuantity,
-      showCheckout,
-      addNewProduct,
-      increaseQuantity,
-      decreaseQuantity
-    }
+// Asynchronous function for loading products from the store if the `products` array is empty.
+const loadProducts = async function () {
+  if (products.value.length === 0) {
+    await store.dispatch("fetchProducts")
   }
+  findSelectedProduct()
+}
+
+// The `onMounted(loadProducts)` line in the Vue setup function is using the `onMounted` lifecycle
+// hook provided by Vue to call the `loadProducts` function when the component is mounted to the DOM.
+onMounted(loadProducts)
+
+// Functions responsible for changing the `productQuantity` value by 1 each time one is called. They directly modifie the value stored in the `productQuantity` ref variable.
+const increaseQuantity = function () {
+  productQuantity.value++
+  addBtnText.value = "Add to Cart"
+}
+
+const decreaseQuantity = function () {
+  if (productQuantity.value > 1) {
+    productQuantity.value--
+    addBtnText.value = "Add to Cart"
+  }
+}
+
+// Function responsible for adding the selected product to the cart
+const addNewProduct = function () {
+  const productToAdd = {
+    name: selectedProduct.value.name,
+    price: Number(selectedProduct.value.price),
+    image: selectedProduct.value.image,
+    quantity: Number(productQuantity.value),
+    total: Number(selectedProduct.value.price) * Number(productQuantity.value)
+  }
+
+  addBtnText.value = "Added!"
+  store.commit("addToCart", productToAdd)
+  setTimeout(() => {
+    addBtnText.value = "Add to Cart"
+  }, 1000)
+  productQuantity.value = 1
+  showCheckout.value = true
 }
 </script>
 <template>

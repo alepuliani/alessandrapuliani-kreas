@@ -1,8 +1,5 @@
-<script>
+<script setup>
 import BaseButton from "@/components/BaseButton.vue"
-export default {
-  components: { BaseButton }
-}
 </script>
 <template>
   <div class="order-complete-div">

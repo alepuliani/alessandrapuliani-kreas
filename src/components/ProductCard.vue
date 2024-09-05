@@ -1,16 +1,12 @@
-<script>
+<script setup>
 import BaseButton from "./BaseButton.vue"
 
-export default {
-  components: { BaseButton },
-
-  props: {
-    products: {
-      type: Array,
-      required: true
-    }
+const props = defineProps({
+  products: {
+    type: Array,
+    required: true
   }
-}
+})
 </script>
 
 <template>

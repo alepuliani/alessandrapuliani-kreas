@@ -1,23 +1,14 @@
-<script>
-export default {
-  props: {
-    customClass: {
-      type: String,
-      default: ""
-    }
-  },
-  emits: ["click"], // Emissione dell'evento come array
-
-  setup(props, { emit }) {
-    const handleClick = () => {
-      emit("click")
-    }
-
-    return {
-      handleClick,
-      customClass: props.customClass
-    }
+<script setup>
+const props = defineProps({
+  customClass: {
+    type: String,
+    default: ""
   }
+})
+const emit = defineEmits(["click"])
+
+const handleClick = () => {
+  emit("click")
 }
 </script>
 

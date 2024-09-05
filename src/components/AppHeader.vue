@@ -1,26 +1,15 @@
-<script>
+<script setup>
 import { useRoute } from "vue-router"
 import { computed } from "vue"
 import { useStore } from "vuex"
 
-export default {
-  setup() {
-    const route = useRoute()
-    const store = useStore()
+const route = useRoute()
+const store = useStore()
 
-    // The code snippet you provided is using Vue 3 Composition API to create reactive properties
-    // `isCartView` and `cartQuantity`.
-    const isCartView = computed(() => route.path === "/cart")
-
-    const cartQuantity = computed(() => store.getters.totalCartQuantity)
-
-    return {
-      route,
-      isCartView,
-      cartQuantity
-    }
-  }
-}
+// The code snippet you provided is using Vue 3 Composition API to create reactive properties
+// `isCartView` and `cartQuantity`.
+const isCartView = computed(() => route.path === "/cart")
+const cartQuantity = computed(() => store.getters.totalCartQuantity)
 </script>
 
 <template>
