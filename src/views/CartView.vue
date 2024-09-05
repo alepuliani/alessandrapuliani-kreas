@@ -1,10 +1,10 @@
 <script setup>
-import { useStore } from "vuex"
+import { useCartStore } from "@/stores/cartStore"
 import { computed } from "vue"
 import BaseButton from "@/components/BaseButton.vue"
 
-const store = useStore()
-const cart = computed(() => store.getters.getCartProducts)
+const cartStore = useCartStore()
+const cart = computed(() => cartStore.getCartProducts)
 
 // These functions `increaseQuantity` and `decreaseQuantity` are responsible for updating the quantity
 // of a product in the shopping cart.
@@ -21,12 +21,12 @@ const decreaseQuantity = function (cartProduct) {
 // The `deleteItem` function is responsible for removing a specific product from the shopping cart by committing a Vuex mutation called "removeFromCart" with the name of the
 // product to be removed as a parameter
 const deleteItem = function (cartProduct) {
-  store.commit("removeFromCart", cartProduct.name)
+  cartStore.removeFromCart(cartProduct.name)
 }
 
 // The clearCart function commits a Vuex mutation called "clearCart," which clears the shopping cart by removing all products from it.
 const clearCart = function () {
-  store.commit("clearCart")
+  cartStore.clearCart()
 }
 
 // This block of code is creating a computed property called `totalPrice` using Vue's `computed` function.
@@ -40,7 +40,7 @@ const totalPrice = computed(() => {
 
 // The `totalQuantity` constant is created using Vue's `computed` function to calculates the total quantity of products in the shopping cart by iterating over each product in the `cart` array and
 // summing up their individual quantities.
-const totalQuantity = computed(() => store.getters.totalCartQuantity)
+const totalQuantity = computed(() => cartStore.totalCartQuantity)
 
 // This function is essentially a handler for confirming an order and clearing the cart in the process.
 const confirmOrder = function () {

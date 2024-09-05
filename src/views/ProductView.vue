@@ -1,15 +1,17 @@
 <script setup>
 import { ref, computed, onMounted } from "vue"
 import { useRoute } from "vue-router"
-import { useStore } from "vuex"
+import { useProductsStore } from "@/stores/productStore"
+import { useCartStore } from "@/stores/cartStore"
 import BaseButton from "../components/BaseButton.vue"
 
-const store = useStore()
 const route = useRoute()
+const productsStore = useProductsStore()
+const cartStore = useCartStore()
 
 // These lines of code are using the `computed` function from Vue to create reactive computed
 // properties.
-const products = computed(() => store.getters.getProducts)
+const products = computed(() => productsStore.getProducts)
 const name = computed(() => route.params.name)
 
 const productQuantity = ref(1)
@@ -29,7 +31,7 @@ const findSelectedProduct = function () {
 // Asynchronous function for loading products from the store if the `products` array is empty.
 const loadProducts = async function () {
   if (products.value.length === 0) {
-    await store.dispatch("fetchProducts")
+    await productsStore.fetchProducts()
   }
   findSelectedProduct()
 }
@@ -62,7 +64,7 @@ const addNewProduct = function () {
   }
 
   addBtnText.value = "Added!"
-  store.commit("addToCart", productToAdd)
+  cartStore.addToCart(productToAdd)
   setTimeout(() => {
     addBtnText.value = "Add to Cart"
   }, 1000)
