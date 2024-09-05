@@ -50,6 +50,7 @@ export default {
   justify-content: center;
   margin-top: 100px;
   flex: 1;
+  padding: 20px;
 
   .discount-div {
     position: fixed;

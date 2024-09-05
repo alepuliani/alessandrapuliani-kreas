@@ -42,7 +42,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, minmax(150px, 1fr));
   gap: 20px;
-  padding: 20px 30px;
 
   .card {
     background-color: white;
@@ -63,7 +62,7 @@ export default {
 
     .product-title {
       margin-top: 10px;
-      font-size: 20px;
+      font-size: 18px;
       text-align: center;
     }
     .product-details {
@@ -71,11 +70,10 @@ export default {
       justify-content: space-around;
       align-items: center;
       padding: 15px;
+      font-size: 16px;
     }
   }
 }
-
-//MEDIA QUERIES
 
 @media screen and (min-width: 768px) {
   .card-container {

@@ -70,7 +70,7 @@ export default {
       setTimeout(() => {
         addBtnText.value = "Add to Cart"
       }, 1000)
-
+      productQuantity.value = 1
       showCheckout.value = true
     }
 
@@ -185,7 +185,7 @@ export default {
 
     .product-description {
       font-size: 18px;
-      padding: 15px 0;
+      padding-top: 15px;
     }
 
     .price-quantity {
