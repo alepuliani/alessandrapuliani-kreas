@@ -80,7 +80,6 @@ const addNewProduct = function () {
           <i class="bi bi-arrow-left-short"></i></button
       ></router-link>
       <img class="product-img" :src="selectedProduct.image" />
-
       <div class="product-info">
         <h1 class="product-title">{{ selectedProduct.name }}</h1>
         <p class="product-description">{{ selectedProduct.description }}</p>

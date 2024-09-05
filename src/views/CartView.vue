@@ -65,8 +65,8 @@ const confirmOrder = function () {
       <div class="cart-container">
         <div class="prod-container">
           <div
-            v-for="(cartProduct, index) in cart"
-            :key="index"
+            v-for="cartProduct in cart"
+            :key="cartProduct.name"
             class="cart-element"
           >
             <img :src="cartProduct.image" alt="" />

@@ -18,8 +18,8 @@ const props = defineProps({
           name: product.name
         }
       }"
-      v-for="(product, index) in products"
-      :key="index"
+      v-for="product in products"
+      :key="product.name"
     >
       <button class="card">
         <img :src="product.image" alt="" class="product-img" />
