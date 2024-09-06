@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router"
-import ProductsListView from "../views/ProductsListView.vue"
+import HomeView from "../views/HomeView.vue"
 import ProductView from "../views/ProductView.vue"
 import CartView from "@/views/CartView.vue"
 import OrderView from "../views/OrderView.vue"
@@ -10,7 +10,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: ProductsListView
+      component: HomeView
     },
     {
       path: "/product/:name",
