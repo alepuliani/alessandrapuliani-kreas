@@ -25,7 +25,20 @@ onMounted(() => {
       <span class="spinner"></span>
     </div>
     <div v-else>
-      <ProductCard :products="products" />
+      <div class="card-container">
+        <router-link
+          :to="{
+            name: 'product',
+            params: {
+              name: product.name
+            }
+          }"
+          v-for="product in products"
+          :key="product.name"
+        >
+          <ProductCard :product="product"
+        /></router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -78,6 +91,12 @@ onMounted(() => {
       }
     }
   }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 20px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -86,6 +105,9 @@ onMounted(() => {
   }
   .results-container {
     margin-top: 130px;
+    .card-container {
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
   }
 }
 </style>
