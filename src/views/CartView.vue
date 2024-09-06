@@ -185,7 +185,6 @@ const confirmOrder = function () {
 
   .cart-start {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
 
@@ -199,11 +198,10 @@ const confirmOrder = function () {
     margin: 20px 0;
     background-color: white;
     display: flex;
-    flex-direction: row;
 
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
     img {
       height: 100px;
@@ -283,7 +281,6 @@ const confirmOrder = function () {
     margin-bottom: 20px;
     border-radius: 10px;
     display: flex;
-    flex-direction: row;
 
     i {
       padding-right: 10px;
@@ -333,8 +330,7 @@ const confirmOrder = function () {
         margin-left: 50px;
         width: 400px;
         padding: 30px;
-
-        border: 2px solid rgba($color: #ffffff, $alpha: 0.5);
+        border: 2px solid rgba(255, 255, 255, 0.5);
         border-radius: 20px;
       }
     }

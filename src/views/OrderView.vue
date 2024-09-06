@@ -10,7 +10,7 @@ import BaseButton from "@/components/BaseButton.vue"
 
     <i class="bi bi-cart-check"></i>
     <router-link to="/">
-      <BaseButton>Go Home</BaseButton>
+      <BaseButton>Home</BaseButton>
     </router-link>
   </div>
 </template>

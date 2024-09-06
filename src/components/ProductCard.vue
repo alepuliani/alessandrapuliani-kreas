@@ -43,13 +43,15 @@ const props = defineProps({
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     color: black;
     border: none;
     font-family: "Mulish", sans-serif;
 
     &:hover {
       cursor: pointer;
+      transform: scale(1.05);
+      transition: transform 0.4s ease;
     }
 
     .product-img {
@@ -89,10 +91,6 @@ const props = defineProps({
   .card-container {
     .card {
       max-width: 300px;
-      .product-title {
-        font-size: 22px;
-        padding: 0 5px;
-      }
       .product-details {
         font-size: 18px;
       }

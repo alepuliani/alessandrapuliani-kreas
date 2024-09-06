@@ -105,7 +105,7 @@ const addNewProduct = function () {
             <BaseButton
               v-if="showCheckout === true"
               :customClass="'checkout-btn'"
-              ><i class="bi bi-cart"></i> Checkout</BaseButton
+              >Checkout</BaseButton
             >
           </router-link>
         </div>
@@ -130,7 +130,7 @@ const addNewProduct = function () {
     border: none;
     z-index: 200;
     font-size: 60px;
-    color: rgba($color: #ffffff, $alpha: 0.8);
+    color: rgba(#ffffff, 0.8);
 
     &:hover {
       color: white;
@@ -138,7 +138,7 @@ const addNewProduct = function () {
     }
 
     &:active {
-      color: rgba($color: #ffffff, $alpha: 0.5);
+      color: rgba(#ffffff, 0.5);
     }
   }
 
@@ -154,9 +154,8 @@ const addNewProduct = function () {
   .product-info {
     position: absolute;
     bottom: -20px;
-
-    background-color: rgb(255, 255, 255);
-    padding: 30px;
+    background-color: #ffffff;
+    padding: 50px 30px;
     margin: auto;
     border-radius: 30px;
     width: 100%;
@@ -175,9 +174,8 @@ const addNewProduct = function () {
 
     .price-quantity {
       display: flex;
-      flex-direction: row;
       justify-content: space-around;
-      padding: 20px 0;
+      padding-top: 20px;
 
       .product-price {
         font-size: 20px;
@@ -186,7 +184,6 @@ const addNewProduct = function () {
 
       .quantity {
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         font-size: 20px;
@@ -216,19 +213,19 @@ const addNewProduct = function () {
     }
 
     .btn-div {
+      margin: 20px 0;
+
       .add-btn {
         padding: 10px 35px;
         border-radius: 25px;
         font-size: 20px;
-        margin-bottom: 30px;
       }
 
       .checkout-btn {
         background-color: #ddc78d;
-        padding: 8px 15px;
+        padding: 10px 35px;
         border-radius: 25px;
-        font-size: 13px;
-        margin: 20px 0;
+        font-size: 20px;
         margin-left: 10px;
 
         &:hover {
@@ -245,12 +242,12 @@ const addNewProduct = function () {
 
 @media screen and (min-width: 768px) {
   .product-container {
-    position: static;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
     flex: 1;
+    position: static;
 
     .prod-div {
       display: flex;
@@ -259,7 +256,6 @@ const addNewProduct = function () {
       margin: 20px auto;
       border-radius: 50px;
       overflow: hidden;
-      position: relative;
       box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
       height: 800px;
       width: 500px;
@@ -280,15 +276,10 @@ const addNewProduct = function () {
         margin: 0;
         position: static;
         border-radius: 0;
-
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
-        .add-btn {
-          margin: 0;
-        }
       }
     }
   }
@@ -299,9 +290,8 @@ const addNewProduct = function () {
       flex-direction: row;
       margin: 30px 0;
       border-radius: 50px;
-      overflow: hidden;
       position: relative;
-      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       height: 400px;
       width: auto;
 
@@ -311,16 +301,10 @@ const addNewProduct = function () {
 
       .product-info {
         width: 400px;
-        margin: 0;
-
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
-        .add-btn {
-          margin: 0;
-        }
       }
     }
   }

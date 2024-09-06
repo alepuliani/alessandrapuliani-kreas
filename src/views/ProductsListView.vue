@@ -14,13 +14,13 @@ onMounted(() => {
 </script>
 
 <template>
+  <div class="discount-div">
+    <p>
+      <i class="bi bi-tags"></i> Buy <strong>4</strong> products and get
+      <strong>10% off</strong>
+    </p>
+  </div>
   <div class="results-container">
-    <div class="discount-div">
-      <p>
-        <i class="bi bi-tags"></i> Buy <strong>4</strong> products and get
-        <strong>10% off</strong>
-      </p>
-    </div>
     <div class="loading" v-if="loading">
       <span class="spinner"></span>
     </div>
@@ -31,6 +31,17 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+.discount-div {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  left: 0;
+  font-size: 14px;
+  padding: 4px;
+  background-color: #ddc78d;
+  text-align: center;
+}
+
 .results-container {
   display: flex;
   flex-direction: column;
@@ -39,17 +50,6 @@ onMounted(() => {
   margin-top: 100px;
   flex: 1;
   padding: 20px;
-
-  .discount-div {
-    position: fixed;
-    top: 80px;
-    right: 0;
-    left: 0;
-    font-size: 14px;
-    padding: 4px;
-    background-color: #ddc78d;
-    text-align: center;
-  }
 
   .loading {
     display: flex;
@@ -67,7 +67,6 @@ onMounted(() => {
       display: inline-block;
       box-sizing: border-box;
       animation: rotation 1s linear infinite;
-      transform: translate(-50%, -50%);
     }
 
     @keyframes rotation {
@@ -82,15 +81,11 @@ onMounted(() => {
 }
 
 @media screen and (min-width: 768px) {
+  .discount-div {
+    font-size: 16px;
+  }
   .results-container {
     margin-top: 130px;
-    display: flex;
-    align-items: center;
-
-    .discount-div {
-      font-size: 16px;
-      padding: 4px;
-    }
   }
 }
 </style>
