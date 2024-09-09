@@ -15,10 +15,10 @@ A Vue.js Application for Sustainable Products
 
 1. **Vue Router**: Used for managing navigation across different views:
 
-_Home_: Used for managing navigation across different views:
-_Product Details_: Displays detailed product information.
-_Cart_: Manages and shows cart items.
-_Order Confirmation_:Confirms successful orders.
+- _Home_: Used for managing navigation across different views:
+- _Product Details_: Displays detailed product information.
+- _Cart_: Manages and shows cart items.
+- _Order Confirmation_:Confirms successful orders.
 
 2. **Pinia**: Centralized state management is handled with Pinia, ensuring consistent data management across components and routes.
 
