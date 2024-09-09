@@ -24,9 +24,9 @@ A Vue.js Application for Sustainable Products
 
 ## Component-Based Architecture:
 
-**Header** and **Footer**: Reusable components for consistent site layout.
-**BaseButton**: Standardized button component for uniform functionality.
-**Product** **Cards**: Custom components for displaying product information on the home page.
+- **Header** and **Footer**: Reusable components for consistent site layout.
+- **BaseButton**: Standardized button component for uniform functionality.
+- **Product** **Cards**: Custom components for displaying product information on the home page.
 
 ## Getting Started
 
