@@ -1,29 +1,52 @@
-# kreas
+# Kreas
 
-This template should help get you started developing with Vue 3 in Vite.
+A Vue.js Application for Sustainable Products
 
-## Recommended IDE Setup
+🔗 [go to Kreas](https://alepuliani.github.io/alessandrapuliani-kreas/)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Features
 
-## Customize configuration
+- **Home Page**: Displays a list of product cards for easy browsing and selection.
+- **Product Details**: Provides detailed information about each product when selected.
+- **Cart Functionality**: Allows users to view and manage their selected items, with cart contents preserved through browser storage.
+- **Order Process**: Finalizes and confirms the user's order upon completion.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Technical Choices:
 
-## Project Setup
+1. **Vue Router**: Used for managing navigation across different views:
 
-```sh
+_Home_: Used for managing navigation across different views:
+_Product Details_: Displays detailed product information.
+_Cart_: Manages and shows cart items.
+_Order Confirmation_:Confirms successful orders.
+
+2. **Pinia**: Centralized state management is handled with Pinia, ensuring consistent data management across components and routes.
+
+## Component-Based Architecture:
+
+**Header** and **Footer**: Reusable components for consistent site layout.
+**BaseButton**: Standardized button component for uniform functionality.
+**Product** **Cards**: Custom components for displaying product information on the home page.
+
+## Getting Started
+
+To run the project locally, follow these steps:
+
+**1. Clone the repository:**
+
+```javascript
+git clone https://github.com/alepuliani/alessandrapuliani-kreas.git
+```
+
+**2. Install dependencies:**
+
+```javascript
+cd alessandrapuliani-kreas
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+**3. Run the Development Server:**
 
-```sh
+```javascript
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
 ```
