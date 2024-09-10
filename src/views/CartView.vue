@@ -46,12 +46,14 @@ const confirmOrder = function () {
         <BaseButton @click="clearCart">Clear Cart</BaseButton>
       </div>
       <div class="cart-container">
-        <div
-          class="prod-container"
-          v-for="cartProduct in cart"
-          :key="cartProduct.name"
-        >
-          <CartProduct :cartProduct="cartProduct" />
+        <div class="cards-div">
+          <div
+            class="prod-container"
+            v-for="cartProduct in cart"
+            :key="cartProduct.name"
+          >
+            <CartProduct :cartProduct="cartProduct" />
+          </div>
         </div>
 
         <div class="checkout-div">
@@ -183,7 +185,6 @@ const confirmOrder = function () {
     }
     .cart-container {
       display: flex;
-      flex-direction: column;
       align-items: baseline;
 
       .checkout-div {
