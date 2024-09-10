@@ -183,6 +183,7 @@ const confirmOrder = function () {
     }
     .cart-container {
       display: flex;
+      flex-direction: column;
       align-items: baseline;
 
       .checkout-div {
